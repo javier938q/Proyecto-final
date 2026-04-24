@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main ()
+{
+  #define lim 5
+  int lista1[lim];
+  int lista2[lim];
+  int lista3[2*lim],num;
+  int indice1=0;
+  int indice2=0;
+    for(indice1 = 0; indice1 <= lim; indice1++)
+    {
+      printf("\nDar un número entero para el elemento %d del arreglo1 ", indice1 ); 
+      scanf("%d",&lista1[indice1]);
+    } 
+   printf("\n");
+//////////////////////////////////////////////////////////////////////////
+    for(indice2 = 0; indice2 <= lim; indice2++)
+    {
+      printf("\nDar un número entero para el elemento %d del arreglo2 ", indice2 ); 
+      scanf("%d",&lista2[indice2]);
+    }
+    
+  printf("\n");
+
+ 
+  return 0;
+
+}
+
+
