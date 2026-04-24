@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main ()
+{
+  int lista1[5];
+  int lista2[5];
+  int indice1=0;
+  int indice2=0;
+  int numerodeElementos1=0;
+  int numerodeElementos2=0; 
+  printf("\nDa un número entre 1 y 5 para indicar la cantidad de elementos que tiene el arreglo1\n");
+  scanf("%d",&numerodeElementos1); 
+  printf("\nDa un número entre 1 y 5 para indicar la cantidad de elementos que tiene el arreglo2\n");
+  scanf("%d",&numerodeElementos2);
+  if((numerodeElementos1>=1) && (numerodeElementos1<=5))
+  {
+    for(indice1 = 0; indice1 <= numerodeElementos1-1; indice1++)
+    {
+      printf("\nDar un número entero para el elemento %d del arreglo1 ", indice1 ); 
+      scanf("%d",&lista1[indice1]);
+    }
+   printf("\nLos valores dados son: \n");
+
+   for (indice1 = 0 ; indice1 <= numerodeElementos1-1 ; indice1++) 
+   { 
+    printf("%d  ", lista1[indice1] ); 
+   } 
+  } 
+  else printf("el valor dado no es válido"); 
+  printf("\n");
+//////////////////////////////////////////////////////////////////////////
+ if((numerodeElementos2>=1) && (numerodeElementos2<=5))
+  {
+    for(indice2 = 0; indice2 <= numerodeElementos2-1; indice2++)
+    {
+      printf("\nDar un número entero para el elemento %d del arreglo2 ", indice2 ); 
+      scanf("%d",&lista2[indice2]);
+    }
+   printf("\nLos valores dados son: \n");
+
+   for (indice2 = 0 ; indice2 <= numerodeElementos2-1 ; indice2++) 
+   { 
+    printf("%d  ", lista2[indice2] ); 
+   } 
+  } 
+  else printf("el valor dado no es válido"); 
+  printf("\n");
+ 
+  return 0;
+
+}
+
