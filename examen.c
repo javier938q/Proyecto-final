@@ -132,7 +132,7 @@ void puntajeganador(int total)
         {
           puntos[i]=puntos[i]+20;       
         }
-        if(votos[i][j]==top3[0])
+        if(votos[i][j]==top3[0]&&top3[1])
           {
               puntos[i]=puntos[i]+10;
           }
