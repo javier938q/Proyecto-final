@@ -40,7 +40,7 @@ int main()
     printf("Oyente %d: %d %d %d\n", i+1, votos[i][0], votos[i][1], votos[i][2]);
   }
   repeticiones(total);
-  puntajegandor(total);
+  puntajeganador(total);
   return 0;
 }
 
@@ -144,10 +144,9 @@ void puntajeganador(int total)
           oyente=i;
         }
     }
-    printf("EL GANADOR DEL CONCURSO ES EL OYENTE %d CON UN TOTAL DE %d PUNTOS\n",oyente,gandor);
+    printf("EL GANADOR DEL CONCURSO ES EL OYENTE %d CON UN TOTAL DE %d PUNTOS\n",oyente+1,ganador);
     printf("TE GANASTE UN PAR DE BOLETOS PARA IR A VER CEPILLIN");
 }
-
     
 
 
