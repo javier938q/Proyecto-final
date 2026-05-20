@@ -9,16 +9,17 @@ vota cada oyente. Para finalizar se introducirá el valor -1 en el primer dato d
 de los otros dos datos.*/
 #include <stdio.h>
 //Arreglos globales 
-int votos [5][3];
+int votos [100][3];
 int contcanciones[10]={0};
 int top3[3];
-int puntos[5]={0};
+int puntos[100]={0};
 int i,j;
 //prototipos de funciones
 int guardado();
 int canciones();
-void puntaje(int total);
+void puntajeganador(int total);
 void repeticiones(int total);
+
 
 int main()
 {
@@ -39,7 +40,7 @@ int main()
     printf("Oyente %d: %d %d %d\n", i+1, votos[i][0], votos[i][1], votos[i][2]);
   }
   repeticiones(total);
-  ganador(total);
+  puntajegandor(total);
   return 0;
 }
 
@@ -48,7 +49,7 @@ int main()
 int guardado()
 {
   int i=0;
-  while (i<5)
+  while (i<100)
     {
       
       printf("Oyente %d: ",i+1);
@@ -104,19 +105,14 @@ void repeticiones(int total)//nota:esta es la funcion de contara los votos y har
         }
     }
 }
-
-             
-       
-        
-      
-
 /*3.- Al final de la emisión se reparten puntos entre los oyentes que han concursado de la siguiente
 manera: 30 puntos si entre las 3 canciones votadas está la no. 1, 20 puntos si está la no. 2 y 10 puntos
 suplementarios si han acertado los dos títulos más votados. Se desea obtener el número del oyente que
 más puntos ha obtenido, ya que se le dará un premio.*/
-void puntaje(int total)
+void puntajeganador(int total)
 {
-  int ganador;
+  int ganador=-1;
+  int oyente=0;
   for(i=0;i<3;i++)
   {
     printf("%d\n",top3[i]);
@@ -125,7 +121,7 @@ void puntaje(int total)
   printf("%d",total);
   printf("---A continuacion se hara la reparticion de puntoos---\n");
   for(i = 0; i < total; i++)
-    {
+  {
     for(j = 0; j < 3; j++)
       {
         if(votos[i][j] == 1)
@@ -138,20 +134,19 @@ void puntaje(int total)
         }
         if(votos[i][j]==top3[0])
           {
-              puntos[i]=puntos[i]+10; // Le damos sus 10 puntos extra
+              puntos[i]=puntos[i]+10;
           }
        }
        printf("El Oyente %d consiguio un total de: %d puntos\n\n", i + 1, puntos[i]);
-        if(gandor)
+        if(puntos[i]>ganador)
+        {
+          ganador=puntos[i];
+          oyente=i;
+        }
     }
+    printf("EL GANADOR DEL CONCURSO ES EL OYENTE %d CON UN TOTAL DE %d PUNTOS\n",oyente,gandor);
+    printf("TE GANASTE UN PAR DE BOLETOS PARA IR A VER CEPILLIN");
 }
-void puntaje()
-{
-  printf("El ganador del concurso es ");
-}
-  
-  
-  
 
     
 
